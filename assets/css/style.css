@@ -62,3 +62,20 @@ h3{
 .btn:hover{
     background-color: yellowgreen;
 }
+
+
+
+
+/*media quriy*/
+
+
+
+@media (min-width:0px) and (max-width:600px)
+{
+    .container{
+        background-color: white;
+        width: 60%;
+        height: 400px;
+       
+    }
+}
