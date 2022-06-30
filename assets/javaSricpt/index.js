@@ -1,0 +1,31 @@
+{/* <div class="joke" id="joke">Awesome joke is loading...... </div> */}
+{/* <button id="jokebtn" class="btn">NEXT JOKE</button> */}
+
+
+
+// dead jokes 
+
+// GET https://icanhazdadjoke.com/
+
+const jokes = document.querySelector('#joke');  
+const jokeBtn = document.querySelector('#jokebtn'); 
+
+
+const generateJokes = ()=>{ 
+    const setHeader = {
+        headers:{
+            Accept:"application/JSON"
+        }
+    }
+    fetch('https://icanhazdadjoke.com', setHeader)
+    .then((res)=> res.json() )
+    .then((data)=>{
+        jokes.innerHTML=data.joke;
+    }).catch((error)=>{
+        console.log(error)
+    })
+}
+
+jokeBtn.addEventListener('click',generateJokes);
+
+generateJokes();
